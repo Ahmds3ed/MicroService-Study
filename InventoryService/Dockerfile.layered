@@ -1,0 +1,30 @@
+
+FROM eclipse-temurin:17.0.4.1_1-jre as builder
+#use jre instaed of jdk
+
+WORKDIR extracted
+#make directory
+
+ADD target/*.jar app.jar
+#add jar from target to the new created directory 'extracted'
+
+RUN java -Djarmode=layertools -jar app.jar extract
+#then run this command to extract jar layers to the new created directory 'extracted'
+
+
+FROM eclipse-temurin:17.0.4.1_1-jre
+WORKDIR application
+#make directory
+
+COPY --from=builder extracted/dependencies/ ./
+COPY --from=builder extracted/spring-boot-loader/ ./
+COPY --from=builder extracted/snapshot-dependencies/ ./
+COPY --from=builder extracted/application/ ./
+
+# copy files from builder images from extracted folder to application folder
+
+EXPOSE 8080
+# expose this port to be used from physical host
+
+ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]
+#run sprint boot jar
