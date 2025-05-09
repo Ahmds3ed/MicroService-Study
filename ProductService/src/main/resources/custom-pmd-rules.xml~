@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<ruleset name="Custom Rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0
+                             http://pmd.sourceforge.net/ruleset_2_0_0.xsd"
+>
+
+    <description>
+        Custom rules to ban System.out and System.err usage.
+    </description>
+ 
+    <rule name="NoSystemOutOrErr" language="java"
+          message="Avoid using System.out or System.err. Use a logger instead."
+          class="net.sourceforge.pmd.lang.rule.XPathRule">
+        <description>Avoid using System.out or System.err</description>
+        <priority>2</priority>
+        <properties>
+            <property name="version" value="2.0"/>
+            <property name="xpath">
+                <value>
+                    //Name[@Image='System.out' or @Image='System.err']
+                </value>
+            </property>
+        </properties>
+    </rule>
+
+</ruleset>

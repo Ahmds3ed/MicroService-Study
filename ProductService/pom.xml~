@@ -96,7 +96,6 @@
 				<artifactId>maven-pmd-plugin</artifactId>
 				<version>3.21.2</version>
 				<configuration>
-					<targetJdk>17</targetJdk>
 					<rulesets>
 						<!-- Reference custom rules -->
 						<ruleset>${project.basedir}\src\main\resources\custom-pmd-rules.xml</ruleset>
