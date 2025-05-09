@@ -35,6 +35,7 @@ jobs:
 
       - name: Build & Test
         run: mvn clean verify
+        working-directory: ./../../ProductService
 
       - name: Run SonarQube Analysis
         env:
