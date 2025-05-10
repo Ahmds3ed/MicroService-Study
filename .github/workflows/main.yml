@@ -13,7 +13,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: MicroService-Study
+        working-directory: ProductService
 
     steps:
       - name: Checkout repository
@@ -41,7 +41,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: >
           mvn sonar:sonar
-          -Dsonar.projectKey=MicroService-Study
+          -Dsonar.projectKey=ProductService
           -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           -Dsonar.java.pmd.reportPaths=target/pmd.xml
+          -Dsonar.pmd.rulesets=src/main/resources/custom-pmd-rules.xml
