@@ -44,3 +44,4 @@ jobs:
           -Dsonar.projectKey=ProductService
           -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.java.pmd.reportPaths=target/pmd.xml
