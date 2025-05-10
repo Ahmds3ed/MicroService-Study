@@ -22,7 +22,7 @@ public class ProductService {
                 .price(pRequest.getPrice())
                 .build();
         productRepository.save(product);
-        System.out.println("Oops!!");
+        System.out.println("Oops !!");
         log.info("After save product {} " + product.getName());
     }
 
