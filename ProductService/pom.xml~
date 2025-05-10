@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.0.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/> <!-- lookup paren from repository -->
 	</parent>
 	<groupId>com.service</groupId>
 	<artifactId>ProductService</artifactId>
@@ -96,6 +96,7 @@
 				<artifactId>maven-pmd-plugin</artifactId>
 				<version>3.21.2</version>
 				<configuration>
+					<targetJdk>17</targetJdk>
 					<rulesets>
 						<!-- Reference custom rules -->
 						<ruleset>${project.basedir}\src\main\resources\custom-pmd-rules.xml</ruleset>

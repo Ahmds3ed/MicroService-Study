@@ -99,7 +99,7 @@
 					<targetJdk>17</targetJdk>
 					<rulesets>
 						<!-- Reference custom rules -->
-						<ruleset>${project.basedir}\src\main\resources\custom-pmd-rules.xml</ruleset>
+						<ruleset>${project.basedir}/src/main/resources/custom-pmd-rules.xml</ruleset>
 					</rulesets>
 					<failOnViolation>true</failOnViolation>
 				</configuration>
